@@ -1,0 +1,71 @@
+// ══════════════════════════════════════════════════════════════════════════
+// FluentToast — Toast element base styles
+// ══════════════════════════════════════════════════════════════════════════
+
+@use 'variables' as *;
+
+.fluent-toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: $fluent-toast-padding-y $fluent-toast-padding-x;
+  border-radius: $fluent-toast-border-radius;
+  border-left: $fluent-toast-border-left-width solid;
+  box-shadow: $fluent-toast-shadow-light;
+  pointer-events: auto;
+  cursor: pointer;
+  opacity: 0;
+  font-size: $fluent-toast-font-size;
+  line-height: $fluent-toast-line-height;
+  max-width: 100%;
+  word-break: break-word;
+  position: relative;
+  transition: opacity $fluent-toast-in-duration $fluent-toast-in-easing,
+              transform $fluent-toast-in-duration $fluent-toast-in-easing;
+
+  &.fluent-toast-in {
+    opacity: 1;
+    transform: translateX(0) translateY(0) !important;
+  }
+
+  &.fluent-toast-out {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.fluent-toast-icon {
+  font-size: $fluent-toast-icon-size;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 1px;
+}
+
+.fluent-toast-body {
+  flex: 1;
+}
+
+.fluent-toast-title {
+  font-weight: $fluent-toast-title-weight;
+  margin-bottom: 2px;
+}
+
+.fluent-toast-msg {
+  opacity: 0.85;
+}
+
+.fluent-toast-close {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0.5;
+  padding: 0 0 0 8px;
+  line-height: 1;
+  flex-shrink: 0;
+  color: inherit;
+
+  &:hover {
+    opacity: 1;
+  }
+}

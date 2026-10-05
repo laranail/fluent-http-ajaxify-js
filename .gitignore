@@ -1,0 +1,12 @@
+node_modules/
+coverage/
+.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Library: a lock records a resolution consumers never use (org convention).
+package-lock.json
+yarn.lock
+pnpm-lock.yaml

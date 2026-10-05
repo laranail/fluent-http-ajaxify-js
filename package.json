@@ -1,0 +1,49 @@
+{
+  "name": "fluent-http-ajaxify",
+  "version": "3.0.0",
+  "description": "Fluent, chainable HTTP client built on Axios with middleware pipeline, toast notifications, and smart auto-init.",
+  "homepage": "https://opensource.simtabi.com/products/laranail/fluent-http-ajaxify-js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laranail/fluent-http-ajaxify-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/laranail/fluent-http-ajaxify-js/issues"
+  },
+  "main": "assets/js/FluentHttpAjaxify.js",
+  "types": "FluentHttpAjaxify.d.ts",
+  "files": [
+    "assets/js/FluentHttpAjaxify.js",
+    "assets/js/FluentToast.js",
+    "assets/js/FluentHttpWrapper.js",
+    "assets/js/fluent-http-bundle.js",
+    "assets/css/fluent-toast.css",
+    "assets/scss/",
+    "FluentHttpAjaxify.d.ts"
+  ],
+  "scripts": {
+    "test": "vitest run && node tests/security.test.js",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:security": "node tests/security.test.js"
+  },
+  "keywords": [
+    "axios",
+    "http",
+    "ajax",
+    "fluent",
+    "chainable",
+    "middleware",
+    "toast",
+    "notifications"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "axios": ">=0.21.0"
+  },
+  "devDependencies": {
+    "vitest": "^1.6.0",
+    "jsdom": "^24.0.0"
+  },
+  "author": "Simtabi LLC <opensource@simtabi.com>"
+}

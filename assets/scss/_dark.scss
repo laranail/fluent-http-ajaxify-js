@@ -1,0 +1,29 @@
+// ══════════════════════════════════════════════════════════════════════════
+// FluentToast — Dark mode override (class-based alternative)
+// ══════════════════════════════════════════════════════════════════════════
+// Use this when you prefer a `.dark` class on <html> or <body>
+// instead of relying on `prefers-color-scheme: dark`.
+
+@use 'variables' as *;
+
+.dark .fluent-toast,
+[data-theme="dark"] .fluent-toast {
+  box-shadow: $fluent-toast-shadow-dark;
+}
+
+@each $type, $colors in $fluent-toast-colors-dark {
+  .dark .fluent-toast--#{$type},
+  [data-theme="dark"] .fluent-toast--#{$type} {
+    background-color: map-get($colors, bg);
+    border-color: map-get($colors, border);
+    color: map-get($colors, text);
+
+    .fluent-toast-icon {
+      color: map-get($colors, icon);
+    }
+
+    .fluent-toast-progress {
+      background-color: map-get($colors, border);
+    }
+  }
+}

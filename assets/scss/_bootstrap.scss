@@ -1,0 +1,16 @@
+// ══════════════════════════════════════════════════════════════════════════
+// FluentToast — Bootstrap framework integration
+// ══════════════════════════════════════════════════════════════════════════
+// Maps FluentToast type classes to Bootstrap's color utilities.
+// Include this partial if your project uses Bootstrap 5.
+
+.fluent-toast--success { @extend .border-success !optional; }
+.fluent-toast--error   { @extend .border-danger !optional; }
+.fluent-toast--warning { @extend .border-warning !optional; }
+.fluent-toast--info    { @extend .border-info !optional; }
+
+// Use Bootstrap alert background colors
+.fluent-toast--success { background-color: var(--bs-success-bg-subtle, #ecfdf5) !important; }
+.fluent-toast--error   { background-color: var(--bs-danger-bg-subtle, #fef2f2) !important; }
+.fluent-toast--warning { background-color: var(--bs-warning-bg-subtle, #fffbeb) !important; }
+.fluent-toast--info    { background-color: var(--bs-info-bg-subtle, #eff6ff) !important; }

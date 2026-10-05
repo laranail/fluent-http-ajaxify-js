@@ -1,0 +1,279 @@
+/**
+ * FluentToast v2.2.0 — Compiled CSS
+ * Pre-compiled from assets/scss/fluent-toast.scss
+ * For customization, use the SCSS source with your own variables.
+ */
+
+/* ── Container (position system) ─────────────────────────────────────── */
+
+[id^="fluent-toast-container"] {
+  position: fixed;
+  z-index: 2147483000;
+  display: flex;
+  gap: 8px;
+  pointer-events: none;
+  max-width: 380px;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+}
+
+#fluent-toast-container-top-right {
+  top: 16px;
+  right: 16px;
+  flex-direction: column;
+}
+
+#fluent-toast-container-top-left {
+  top: 16px;
+  left: 16px;
+  flex-direction: column;
+}
+
+#fluent-toast-container-top-center {
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-direction: column;
+}
+
+#fluent-toast-container-bottom-right {
+  bottom: 16px;
+  right: 16px;
+  flex-direction: column-reverse;
+}
+
+#fluent-toast-container-bottom-left {
+  bottom: 16px;
+  left: 16px;
+  flex-direction: column-reverse;
+}
+
+#fluent-toast-container-bottom-center {
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-direction: column-reverse;
+}
+
+/* ── Toast element ───────────────────────────────────────────────────── */
+
+.fluent-toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 4px solid;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  pointer-events: auto;
+  cursor: pointer;
+  opacity: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  max-width: 100%;
+  word-break: break-word;
+  position: relative;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fluent-toast.fluent-toast-in {
+  opacity: 1;
+  transform: translateX(0) translateY(0) !important;
+}
+
+.fluent-toast.fluent-toast-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fluent-toast-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 1px;
+}
+
+.fluent-toast-body {
+  flex: 1;
+}
+
+.fluent-toast-title {
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.fluent-toast-msg {
+  opacity: 0.85;
+}
+
+.fluent-toast-close {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0.5;
+  padding: 0 0 0 8px;
+  line-height: 1;
+  flex-shrink: 0;
+  color: inherit;
+}
+
+.fluent-toast-close:hover {
+  opacity: 1;
+}
+
+/* ── Progress bar ────────────────────────────────────────────────────── */
+
+.fluent-toast-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  border-radius: 0 0 0 8px;
+  transition: width linear;
+}
+
+/* ── Light theme colors (default) ────────────────────────────────────── */
+
+.fluent-toast--success {
+  background-color: #ecfdf5;
+  border-color: #10b981;
+  color: #065f46;
+}
+.fluent-toast--success .fluent-toast-icon {
+  color: #10b981;
+}
+.fluent-toast--success .fluent-toast-progress {
+  background-color: #10b981;
+}
+
+.fluent-toast--error {
+  background-color: #fef2f2;
+  border-color: #ef4444;
+  color: #991b1b;
+}
+.fluent-toast--error .fluent-toast-icon {
+  color: #ef4444;
+}
+.fluent-toast--error .fluent-toast-progress {
+  background-color: #ef4444;
+}
+
+.fluent-toast--warning {
+  background-color: #fffbeb;
+  border-color: #f59e0b;
+  color: #92400e;
+}
+.fluent-toast--warning .fluent-toast-icon {
+  color: #f59e0b;
+}
+.fluent-toast--warning .fluent-toast-progress {
+  background-color: #f59e0b;
+}
+
+.fluent-toast--info {
+  background-color: #eff6ff;
+  border-color: #3b82f6;
+  color: #1e40af;
+}
+.fluent-toast--info .fluent-toast-icon {
+  color: #3b82f6;
+}
+.fluent-toast--info .fluent-toast-progress {
+  background-color: #3b82f6;
+}
+
+/* ── Dark theme (prefers-color-scheme) ───────────────────────────────── */
+
+@media (prefers-color-scheme: dark) {
+  .fluent-toast {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  .fluent-toast--success {
+    background-color: #064e3b;
+    border-color: #10b981;
+    color: #d1fae5;
+  }
+  .fluent-toast--success .fluent-toast-icon {
+    color: #34d399;
+  }
+
+  .fluent-toast--error {
+    background-color: #7f1d1d;
+    border-color: #ef4444;
+    color: #fee2e2;
+  }
+  .fluent-toast--error .fluent-toast-icon {
+    color: #f87171;
+  }
+
+  .fluent-toast--warning {
+    background-color: #78350f;
+    border-color: #f59e0b;
+    color: #fef3c7;
+  }
+  .fluent-toast--warning .fluent-toast-icon {
+    color: #fbbf24;
+  }
+
+  .fluent-toast--info {
+    background-color: #1e3a5f;
+    border-color: #3b82f6;
+    color: #dbeafe;
+  }
+  .fluent-toast--info .fluent-toast-icon {
+    color: #60a5fa;
+  }
+}
+
+/* ── Dark theme (class-based alternative) ────────────────────────────── */
+
+.dark .fluent-toast,
+[data-theme="dark"] .fluent-toast {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.dark .fluent-toast--success,
+[data-theme="dark"] .fluent-toast--success {
+  background-color: #064e3b;
+  border-color: #10b981;
+  color: #d1fae5;
+}
+.dark .fluent-toast--success .fluent-toast-icon,
+[data-theme="dark"] .fluent-toast--success .fluent-toast-icon {
+  color: #34d399;
+}
+
+.dark .fluent-toast--error,
+[data-theme="dark"] .fluent-toast--error {
+  background-color: #7f1d1d;
+  border-color: #ef4444;
+  color: #fee2e2;
+}
+.dark .fluent-toast--error .fluent-toast-icon,
+[data-theme="dark"] .fluent-toast--error .fluent-toast-icon {
+  color: #f87171;
+}
+
+.dark .fluent-toast--warning,
+[data-theme="dark"] .fluent-toast--warning {
+  background-color: #78350f;
+  border-color: #f59e0b;
+  color: #fef3c7;
+}
+.dark .fluent-toast--warning .fluent-toast-icon,
+[data-theme="dark"] .fluent-toast--warning .fluent-toast-icon {
+  color: #fbbf24;
+}
+
+.dark .fluent-toast--info,
+[data-theme="dark"] .fluent-toast--info {
+  background-color: #1e3a5f;
+  border-color: #3b82f6;
+  color: #dbeafe;
+}
+.dark .fluent-toast--info .fluent-toast-icon,
+[data-theme="dark"] .fluent-toast--info .fluent-toast-icon {
+  color: #60a5fa;
+}

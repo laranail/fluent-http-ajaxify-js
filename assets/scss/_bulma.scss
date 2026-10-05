@@ -1,0 +1,28 @@
+// ══════════════════════════════════════════════════════════════════════════
+// FluentToast — Bulma framework integration
+// ══════════════════════════════════════════════════════════════════════════
+// Optional overrides that align FluentToast with Bulma's color system.
+
+.fluent-toast--success {
+  background-color: var(--bulma-success-light, #ecfdf5);
+  border-color: var(--bulma-success, #10b981);
+  color: var(--bulma-success-dark, #065f46);
+}
+
+.fluent-toast--error {
+  background-color: var(--bulma-danger-light, #fef2f2);
+  border-color: var(--bulma-danger, #ef4444);
+  color: var(--bulma-danger-dark, #991b1b);
+}
+
+.fluent-toast--warning {
+  background-color: var(--bulma-warning-light, #fffbeb);
+  border-color: var(--bulma-warning, #f59e0b);
+  color: var(--bulma-warning-dark, #92400e);
+}
+
+.fluent-toast--info {
+  background-color: var(--bulma-info-light, #eff6ff);
+  border-color: var(--bulma-info, #3b82f6);
+  color: var(--bulma-info-dark, #1e40af);
+}

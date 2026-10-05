@@ -1,0 +1,49 @@
+// ══════════════════════════════════════════════════════════════════════════
+// FluentToast — Tailwind CSS framework integration
+// ══════════════════════════════════════════════════════════════════════════
+// Optional overrides that align FluentToast with Tailwind's design tokens.
+// Include if your project uses Tailwind CSS.
+
+// Use Tailwind's color palette via CSS custom properties
+.fluent-toast--success {
+  --fluent-bg: theme('colors.emerald.50', #ecfdf5);
+  --fluent-border: theme('colors.emerald.500', #10b981);
+  --fluent-text: theme('colors.emerald.800', #065f46);
+  --fluent-icon: theme('colors.emerald.500', #10b981);
+}
+
+.fluent-toast--error {
+  --fluent-bg: theme('colors.red.50', #fef2f2);
+  --fluent-border: theme('colors.red.500', #ef4444);
+  --fluent-text: theme('colors.red.800', #991b1b);
+  --fluent-icon: theme('colors.red.500', #ef4444);
+}
+
+.fluent-toast--warning {
+  --fluent-bg: theme('colors.amber.50', #fffbeb);
+  --fluent-border: theme('colors.amber.500', #f59e0b);
+  --fluent-text: theme('colors.amber.800', #92400e);
+  --fluent-icon: theme('colors.amber.500', #f59e0b);
+}
+
+.fluent-toast--info {
+  --fluent-bg: theme('colors.blue.50', #eff6ff);
+  --fluent-border: theme('colors.blue.500', #3b82f6);
+  --fluent-text: theme('colors.blue.800', #1e40af);
+  --fluent-icon: theme('colors.blue.500', #3b82f6);
+}
+
+// Apply custom properties
+.fluent-toast {
+  background-color: var(--fluent-bg);
+  border-color: var(--fluent-border);
+  color: var(--fluent-text);
+
+  .fluent-toast-icon {
+    color: var(--fluent-icon);
+  }
+
+  .fluent-toast-progress {
+    background-color: var(--fluent-border);
+  }
+}

@@ -1,0 +1,47 @@
+// ══════════════════════════════════════════════════════════════════════════
+// FluentToast — Color themes (light + dark)
+// ══════════════════════════════════════════════════════════════════════════
+
+@use 'variables' as *;
+
+// ── Light theme (default) ───────────────────────────────────────────────
+
+@each $type, $colors in $fluent-toast-colors-light {
+  .fluent-toast--#{$type} {
+    background-color: map-get($colors, bg);
+    border-color: map-get($colors, border);
+    color: map-get($colors, text);
+
+    .fluent-toast-icon {
+      color: map-get($colors, icon);
+    }
+
+    .fluent-toast-progress {
+      background-color: map-get($colors, border);
+    }
+  }
+}
+
+// ── Dark theme ──────────────────────────────────────────────────────────
+
+@media (prefers-color-scheme: dark) {
+  .fluent-toast {
+    box-shadow: $fluent-toast-shadow-dark;
+  }
+
+  @each $type, $colors in $fluent-toast-colors-dark {
+    .fluent-toast--#{$type} {
+      background-color: map-get($colors, bg);
+      border-color: map-get($colors, border);
+      color: map-get($colors, text);
+
+      .fluent-toast-icon {
+        color: map-get($colors, icon);
+      }
+
+      .fluent-toast-progress {
+        background-color: map-get($colors, border);
+      }
+    }
+  }
+}

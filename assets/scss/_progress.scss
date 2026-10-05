@@ -1,0 +1,14 @@
+// ══════════════════════════════════════════════════════════════════════════
+// FluentToast — Progress bar
+// ══════════════════════════════════════════════════════════════════════════
+
+@use 'variables' as *;
+
+.fluent-toast-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: $fluent-toast-progress-height;
+  border-radius: 0 0 0 $fluent-toast-border-radius;
+  transition: width linear;
+}

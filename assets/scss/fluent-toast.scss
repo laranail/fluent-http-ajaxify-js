@@ -1,0 +1,16 @@
+// ══════════════════════════════════════════════════════════════════════════
+// FluentToast — Main stylesheet
+// ══════════════════════════════════════════════════════════════════════════
+// Import this file to get the complete FluentToast CSS.
+//
+// For framework-specific overrides, also import one of:
+//   @use 'bootstrap';
+//   @use 'tailwind';
+//   @use 'bulma';
+
+@use 'variables';
+@use 'container';
+@use 'toast';
+@use 'progress';
+@use 'colors';
+@use 'dark';

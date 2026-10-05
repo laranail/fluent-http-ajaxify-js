@@ -1,0 +1,56 @@
+// ══════════════════════════════════════════════════════════════════════════
+// FluentToast — Container (position system)
+// ══════════════════════════════════════════════════════════════════════════
+
+@use 'variables' as *;
+
+[id^="fluent-toast-container"] {
+  position: fixed;
+  z-index: $fluent-toast-z-index;
+  display: flex;
+  gap: $fluent-toast-gap;
+  pointer-events: none;
+  max-width: $fluent-toast-max-width;
+  width: 100%;
+  font-family: $fluent-toast-font-family;
+}
+
+// ── Position variants ───────────────────────────────────────────────────
+
+#fluent-toast-container-top-right {
+  top: $fluent-toast-offset;
+  right: $fluent-toast-offset;
+  flex-direction: column;
+}
+
+#fluent-toast-container-top-left {
+  top: $fluent-toast-offset;
+  left: $fluent-toast-offset;
+  flex-direction: column;
+}
+
+#fluent-toast-container-top-center {
+  top: $fluent-toast-offset;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-direction: column;
+}
+
+#fluent-toast-container-bottom-right {
+  bottom: $fluent-toast-offset;
+  right: $fluent-toast-offset;
+  flex-direction: column-reverse;
+}
+
+#fluent-toast-container-bottom-left {
+  bottom: $fluent-toast-offset;
+  left: $fluent-toast-offset;
+  flex-direction: column-reverse;
+}
+
+#fluent-toast-container-bottom-center {
+  bottom: $fluent-toast-offset;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-direction: column-reverse;
+}
