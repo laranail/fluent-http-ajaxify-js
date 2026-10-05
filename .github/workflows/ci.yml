@@ -19,7 +19,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node: ['20', '22', '24']
+        # Node 20 is absent because the test toolchain refuses to install there,
+        # not as a statement about what the library runs on. vitest 5 declares
+        # engines ^22.12.0 || ^24.0.0 || >=26.0.0 and jsdom 30 declares
+        # ^22.22.2 || ^24.15.0 || >=26.0.0, so `npm install` on the npm that ships
+        # with Node 20 fails while resolving them -- no npm upgrade helps. Node 20
+        # also left support on 2026-04-30. Nothing in src/ requires Node 22, so
+        # package.json deliberately still declares no `engines`: this is the floor
+        # for testing the package, not for using it.
+        node: ['22', '24']
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
