@@ -24,6 +24,15 @@ All notable changes to FluentHttpAjaxify will be documented in this file.
   `archive/FluentHttpAjaxify.root-copy.js`. `assets/js/FluentHttpAjaxify.js` (v3.0.0) is canonical: it is
   what `main` and the tests load, and it is a superset of the root copy.
 - `package-lock.json` is no longer tracked (library convention).
+- **The CI test matrix drops Node 20, leaving 22 and 24.** This is a floor for
+  testing the package, not for using it. vitest 5 declares
+  `engines: ^22.12.0 || ^24.0.0 || >=26.0.0` and jsdom 30 declares
+  `^22.22.2 || ^24.15.0 || >=26.0.0`, so `npm install` on the npm that ships with
+  Node 20 fails while resolving them — `npm error Cannot read properties of null
+  (reading 'edgesOut')` — and no npm upgrade changes that, because the refusal is
+  in the packages' own metadata. Node 20 also left support on 2026-04-30.
+  `package.json` still declares no `engines`: nothing under `src/` requires Node
+  22, so claiming a runtime floor would overstate what was measured.
 
 ### Fixed
 
@@ -34,18 +43,6 @@ All notable changes to FluentHttpAjaxify will be documented in this file.
 - Two tests asserted behaviour the library does not document: `getRegistration()` exposes the name at
   `metadata.name`, and the last middleware pushed is the outermost, as the `MiddlewareStack` docblock
   states.
-
-### Changed
-
-- **The CI test matrix drops Node 20, leaving 22 and 24.** This is a floor for
-  testing the package, not for using it. vitest 5 declares
-  `engines: ^22.12.0 || ^24.0.0 || >=26.0.0` and jsdom 30 declares
-  `^22.22.2 || ^24.15.0 || >=26.0.0`, so `npm install` on the npm that ships with
-  Node 20 fails while resolving them — `npm error Cannot read properties of null
-  (reading 'edgesOut')` — and no npm upgrade changes that, because the refusal is
-  in the packages' own metadata. Node 20 also left support on 2026-04-30.
-  `package.json` still declares no `engines`: nothing under `src/` requires Node
-  22, so claiming a runtime floor would overstate what was measured.
 
 ## [3.0.0] — 2025-06-XX
 
