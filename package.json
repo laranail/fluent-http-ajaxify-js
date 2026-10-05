@@ -42,7 +42,7 @@
     "axios": ">=0.21.0"
   },
   "devDependencies": {
-    "vitest": "^1.6.0",
+    "vitest": "^5.0.3",
     "jsdom": "^24.0.0"
   },
   "author": "Simtabi LLC <opensource@simtabi.com>"
